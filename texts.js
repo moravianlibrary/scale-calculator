@@ -10,9 +10,9 @@ var texts = {
     "en": "mzk-logo-en.png"
   },
   "about-app": {
-    "cs": "o aplikaci",
+    "cs": "O aplikaci",
     "de": "Über die Applikation",
-    "en": "about this web app"
+    "en": "About this web app"
   },
   "close": {
     "cs": "Zavřít",
@@ -26,18 +26,18 @@ var texts = {
   },
   "na-mape-je": {
     "cs": "na mapě je",
-    "de": "==Chýba preklad==",
-    "en": "==Chýba preklad=="
+    "de": "auf der Karte ist",
+    "en": "on a map is"
   },
   "ve-skutecnosti": {
-    "cs": "ve skutečnosti",
-    "de": "==Chýba preklad==",
-    "en": "==Chýba preklad=="
+    "cs": "ve skutečnosti.",
+    "de": "auf dem Boden.",
+    "en": "on a ground."
   },
   "ceska-1765": {
     "cs": "česká (do 1765)",
-    "de": "==Chýba preklad==",
-    "en": "==Chýba preklad=="
+    "de": "böhmische",
+    "en": "Czech (till 1765)"
   },
   "mile": {
     "cs": "míle",
@@ -71,8 +71,8 @@ var texts = {
   },
   "dolnorakouska": {
     "cs": "dolnorakouská",
-    "de": "==Chýba preklad==",
-    "en": "==Chýba preklad=="
+    "de": "niederösterreichische",
+    "en": "Lower Austrian"
   },
   "mile-dolnorakouska": {
     "cs": "míle dolnorakouská",
@@ -101,8 +101,8 @@ var texts = {
   },
   "moravska-1758": {
     "cs": "moravská (do 1758)",
-    "de": "==Chýba preklad==",
-    "en": "==Chýba preklad=="
+    "de": "mährische",
+    "en": "Moravian (till 1758)"
   },
   "sah-moravsky": {
     "cs": "sáh moravský",
@@ -126,8 +126,8 @@ var texts = {
   },
   "slezska-1750": {
     "cs": "slezská (do 1750)",
-    "de": "==Chýba preklad==",
-    "en": "==Chýba preklad=="
+    "de": "schlesische",
+    "en": "Silesian (till 1750)"
   },
   "mile-slezska": {
     "cs": "míle slezská",
@@ -161,8 +161,8 @@ var texts = {
   },
   "pruska": {
     "cs": "pruská",
-    "de": "==Chýba preklad==",
-    "en": "==Chýba preklad=="
+    "de": "preußische",
+    "en": "Prussian"
   },
   "mile-pruska": {
     "cs": "míle pruská",
@@ -191,28 +191,28 @@ var texts = {
   },
   "metricka": {
     "cs": "metrická",
-    "de": "==Chýba preklad==",
-    "en": "==Chýba preklad=="
+    "de": "metrisch",
+    "en": "metric"
   },
   "kilometr": {
-    "cs": "kilometr",
-    "de": "Kilometer",
-    "en": "kilometer"
+    "cs": "km",
+    "de": "km",
+    "en": "km"
   },
   "metr": {
-    "cs": "metr",
-    "de": "Meter",
-    "en": "meter"
+    "cs": "m",
+    "de": "m",
+    "en": "m"
   },
   "centimetr": {
-    "cs": "centimetr",
-    "de": "Zentimeter",
-    "en": "centimetr"
+    "cs": "cm",
+    "de": "cm",
+    "en": "cm"
   },
   "slovenska-uherska-18": {
     "cs": "slovenská-uherská (18. století)",
-    "de": "==Chýba preklad==",
-    "en": "==Chýba preklad=="
+    "de": "slowakischer königlicher",
+    "en": "Slovak-Hungarian (18.century)"
   },
   "kralovsky-sah-slovensky": {
     "cs": "královský sáh slovenský",
@@ -226,8 +226,8 @@ var texts = {
   },
   "slovenska-uherska-19": {
     "cs": "slovenská-uherská (19. století)",
-    "de": "==Chýba preklad==",
-    "en": "==Chýba preklad=="
+    "de": "ungarische",
+    "en": "Slovak-Hungarian (19th century)"
   },
   "mile-uherska": {
     "cs": "míle uherská",
