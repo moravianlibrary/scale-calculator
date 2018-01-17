@@ -60,6 +60,7 @@ var measureTooltip;
 
 var mapElement = document.getElementById('map');
 
+var clearMapDisabled = false;
 
 var map = new ol.Map({
   layers: [raster, vector],
@@ -85,12 +86,14 @@ var unitInput = $('#input-unit');
 var formatLength = function(line) {
   var length = ol.Sphere.getLength(line);
 
+  clearMapDisabled = true;
   systemInput.val(systemForMap);
   systemInput.trigger('change');
-  unitInput.val(ratioForMap);
+  unitInput.val(unitForMap);
   unitInput.trigger('change');
   valueUnitInput.val(Math.round(length / 1000 * 100) / 100);
   valueUnitInput.trigger('keyup');
+  clearMapDisabled = false;
   var output;
   if (length > 100) {
     output = (Math.round(length / 1000 * 100) / 100) +
@@ -197,6 +200,17 @@ function createMeasureTooltip() {
     positioning: 'bottom-center'
   });
   map.addOverlay(measureTooltip);
+}
+
+function clearMap() {
+  if (clearMapDisabled) {
+    return;
+  }
+  source.clear(true);
+  if (measureTooltipElement) {
+    measureTooltipElement.parentNode.removeChild(measureTooltipElement);
+    measureTooltipElement = null;
+  }
 }
 
 addInteraction();

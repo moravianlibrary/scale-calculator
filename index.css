@@ -12,6 +12,17 @@
   right: 0;
   bottom: 0;
 }
+.title > h1 {
+  display: inline-block;
+}
+.title > a {
+  margin-left: 15px;
+}
+.title > a > img {
+  width: 30px;
+  position: relative;
+  top: -7px;
+}
 .languages {
   position: absolute;
   top: 0;
@@ -24,6 +35,12 @@
 }
 .languages .btn.disabled {
   opacity: 0.2;
+}
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 15px;
 }
 #output {
   display: inline-block;
