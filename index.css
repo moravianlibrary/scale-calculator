@@ -79,3 +79,6 @@
 .tooltip-static:before {
   border-top-color: #ffcc33;
 }
+div.inline {
+  display: inline-block;
+}
