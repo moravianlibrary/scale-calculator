@@ -82,3 +82,7 @@
 div.inline {
   display: inline-block;
 }
+
+.modal-dialog {
+  width: 90%;
+}
