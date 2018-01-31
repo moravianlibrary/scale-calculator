@@ -25,7 +25,7 @@ var texts = {
     "en": "System"
   },
   "help-text": {
-    "cs": "<p>Aplikace slouží k rychlému zjištění měřítka na starých mapách. Lze ji využít k převodu měřítka zapsaného ve starších formátech za použití historických délkových měr i metrické soustavy do tvaru 1:M.</p> <p> <strong>Nápověda</strong><br> Když není měřítko na mapě uvedeno: <ol> <li>navolíme v prvním poli soustavu jednotek, kterou předpokládáme, že autor mapy užil,</li> <li>změříme vzdálenost mezi dvěma vybranými body na staré mapě (v milimetrech) a zapíšeme do druhého pole,</li> <li>vyznačíme stejné dva body na současné mapě zde níže,</li> <li>údaj o vzdálenosti se automaticky přenese a bude zapsán v kilometrech ve třetím poli a</li> <li>získáme údaj 1: …</ol> </ul> </p> <p> Když je na mapě grafické měřítko, tedy úsečka: <ol> <li>navolíme v prvním poli soustavu jednotek, kterou autor mapy užil,</li> <li>změříme délku úsečky na mapě v milimetrech a zapíšeme do druhého pole,</li> <li>zapíšeme počet jednotek do třetího pole,</li> <li>navolíme jednotky, které autor mapy užil, ve čtvrtém poli a</li> <li>získáme údaj 1: …</li> <ol> </p>  <strong>O měřítcích starých map</strong>  <p>Nejčastěji se na starých – rukopisných i tištěných – mapách setkáváme s dvojí podobou údaje o měřítku: není zapsán vůbec nebo je vyjádřen úsečkou. Aplikace umožňuje výpočet měřítka v obou případech. Jde vždy o výpočet orientační, který slouží zejména knihovníkům a archivářům spravujícím a zpřístupňujícím formou katalogu či jiné pomůcky historické mapové fondy, historickým kartografům i laickým zájemcům o staré mapy. Proto je vhodné přiměřeně zaokrouhlovat. Aplikace nenahrazuje kartometrickou analýzu mapy provedenou pokročilými kartografickými software.<p> <p>Aplikace pracuje s jednotkami užívanými ve Střední Evropě v období raného novověku až po metrickou soustavu: bere v potaz české délkové jednotky užívané do roku 1765, moravské užívané do roku 1758, slezské užívané do roku 1750, pruské z 18. století, slovensko-uherské (jak z 18., tak z 19. století), dolnorakouskou soustavu zaváděnou v jednotlivých zmíněných zemích od druhé poloviny 18. století a metrickou soustavu zavedenou v Rakousku-Uhersku zákonem z roku 1871, který vstoupil v platnost 1. 1. 1876.</p> <p>Vycházeli jsme z následující literatury: Hlaváček Ivan a kol., Vademecum pomocných věd historických, 3. vyd., Praha 2002; Hofmann Gustav, Metrologická příručka pro Čechy, Moravu a Slezsko do zavedení metrické soustavy, Plzeň-Sušice 1984; Húščava Alexander, Poľnohospodárske miery na Slovensku, Bratislava 1972.</p> <p>Autoři: Eva Chodějovská, Petr Žabička, Erich Duda.<br> Moravská zemská knihovna 2018.</p> ",
+    "cs": "<p>Aplikace slouží k rychlému zjištění měřítka na starých mapách. Lze ji využít k převodu měřítka zapsaného ve starších formátech za použití historických délkových měr i metrické soustavy do tvaru 1:M.</p> <p> <strong>Nápověda</strong><br> Když není měřítko na mapě uvedeno: <ol> <li>navolíme v prvním poli soustavu jednotek, kterou předpokládáme, že autor mapy užil,</li> <li>změříme vzdálenost mezi dvěma vybranými body na staré mapě (v milimetrech) a zapíšeme do druhého pole,</li> <li>vyznačíme stejné dva body na současné mapě zde níže,</li> <li>údaj o vzdálenosti se automaticky přenese a bude zapsán v kilometrech ve třetím poli a</li> <li>získáme údaj 1: …</ol> </ul> </p> <p> Když je na mapě grafické měřítko, tedy úsečka: <ol> <li>navolíme v prvním poli soustavu jednotek, kterou autor mapy užil,</li> <li>změříme délku úsečky na mapě v milimetrech a zapíšeme do druhého pole,</li> <li>zapíšeme počet jednotek do třetího pole,</li> <li>navolíme jednotky, které autor mapy užil, ve čtvrtém poli a</li> <li>získáme údaj 1: …</li> </ol> </p>  <strong>O měřítcích starých map</strong>  <p>Nejčastěji se na starých – rukopisných i tištěných – mapách setkáváme s dvojí podobou údaje o měřítku: není zapsán vůbec nebo je vyjádřen úsečkou. Aplikace umožňuje výpočet měřítka v obou případech. Jde vždy o výpočet orientační, který slouží zejména knihovníkům a archivářům spravujícím a zpřístupňujícím formou katalogu či jiné pomůcky historické mapové fondy, historickým kartografům i laickým zájemcům o staré mapy. Proto je vhodné přiměřeně zaokrouhlovat. Aplikace nenahrazuje kartometrickou analýzu mapy provedenou pokročilými kartografickými software.<p> <p>Aplikace pracuje s jednotkami užívanými ve Střední Evropě v období raného novověku až po metrickou soustavu: bere v potaz české délkové jednotky užívané do roku 1765, moravské užívané do roku 1758, slezské užívané do roku 1750, pruské z 18. století, slovensko-uherské (jak z 18., tak z 19. století), dolnorakouskou soustavu zaváděnou v jednotlivých zmíněných zemích od druhé poloviny 18. století a metrickou soustavu zavedenou v Rakousku-Uhersku zákonem z roku 1871, který vstoupil v platnost 1. 1. 1876.</p> <p>Vycházeli jsme z následující literatury: Hlaváček Ivan a kol., Vademecum pomocných věd historických, 3. vyd., Praha 2002; Hofmann Gustav, Metrologická příručka pro Čechy, Moravu a Slezsko do zavedení metrické soustavy, Plzeň-Sušice 1984; Húščava Alexander, Poľnohospodárske miery na Slovensku, Bratislava 1972.</p> <p>Autoři: Eva Chodějovská, Petr Žabička, Erich Duda.<br> Moravská zemská knihovna 2018.</p> ",
     "de": "<h3>Grafischer Maßstab auf die Altkarte</h3><p>Die Strecke XXXX-Millimeter lang ist XXXX<br>beträgt<br>1: …</p><h3>Keine Maßstabangabe auf die Altkarte</h3><p>Die Distanz zwischen zwei ausgewählten Punkten auf die Altkarte beträgt XXXX Millimeter, die Distanz zwischen derselben Punkten auf die gegenwärtige Karte hier unten (die Punkten sind zu markieren) beträgt XXXX,<br>beträgt<br>1: …</p>",
     "en": "<h3>Graphic scale on the antique map</h3><p>line segment XXXX mm long is XXXX<br>which makes<br>1: …</p><h3>No scale on the antique map</h3><p>Distance between two selected points on the antique map is XXXX mm; distance between the same points on the current map is (mark them in the map bellow) XXXX mm<br>which makes<br>1: …</p>"
   },
@@ -41,8 +41,8 @@ var texts = {
   },
   "ceska-1765": {
     "cs": "česká (do 1765)",
-    "de": "böhmische",
-    "en": "Czech (till 1765)"
+    "de": "böhmische Längenmaße (bis 1765)",
+    "en": "Bohemian (till 1765)"
   },
   "mile": {
     "cs": "míle - böhmische Meile",
@@ -75,8 +75,8 @@ var texts = {
     "en": "inch - böhmischer Zoll"
   },
   "dolnorakouska": {
-    "cs": "dolnorakouská - niederösterreichische",
-    "de": "niederösterreichische",
+    "cs": "dolnorakouská",
+    "de": "niederösterreichische Längenmaße",
     "en": "Lower Austrian"
   },
   "mile-dolnorakouska": {
@@ -106,7 +106,7 @@ var texts = {
   },
   "moravska-1758": {
     "cs": "moravská (do 1758)",
-    "de": "mährische",
+    "de": "mährische Längenmaße (bis 1758)",
     "en": "Moravian (till 1758)"
   },
   "sah-moravsky": {
@@ -131,7 +131,7 @@ var texts = {
   },
   "slezska-1750": {
     "cs": "slezská (do 1750)",
-    "de": "schlesische",
+    "de": "schlesische Längenmaße (bis 1750)",
     "en": "Silesian (till 1750)"
   },
   "mile-slezska": {
@@ -165,8 +165,8 @@ var texts = {
     "en": "inch - schlesischer Zoll"
   },
   "pruska": {
-    "cs": "pruská - preußische",
-    "de": "preußische",
+    "cs": "pruská",
+    "de": "preußische Längenmaße",
     "en": "Prussian"
   },
   "mile-pruska": {
@@ -196,7 +196,7 @@ var texts = {
   },
   "metricka": {
     "cs": "metrická",
-    "de": "metrisch",
+    "de": "metrisches System",
     "en": "metric"
   },
   "kilometr": {
@@ -216,8 +216,8 @@ var texts = {
   },
   "slovenska-uherska-18": {
     "cs": "slovenská-uherská (18. století)",
-    "de": "slowakischer königlicher",
-    "en": "Slovak-Hungarian (18.century)"
+    "de": "slowakisch-ungarische Längenmaße (18. Jahrhundert)",
+    "en": "Slovak-Hungarian (18th century)"
   },
   "kralovsky-sah-slovensky": {
     "cs": "královský sáh slovenský - slowakischer königlicher Klafter",
@@ -231,7 +231,7 @@ var texts = {
   },
   "slovenska-uherska-19": {
     "cs": "slovenská-uherská (19. století)",
-    "de": "ungarische",
+    "de": "slowakisch-ungarische Längenmaße (19. Jahrhundert)",
     "en": "Slovak-Hungarian (19th century)"
   },
   "mile-uherska": {
