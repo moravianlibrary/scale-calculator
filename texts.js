@@ -30,9 +30,9 @@ var texts = {
     "en": "<h3>Graphic scale on the antique map</h3><p>line segment XXXX mm long is XXXX<br>which makes<br>1: …</p><h3>No scale on the antique map</h3><p>Distance between two selected points on the antique map is XXXX mm; distance between the same points on the current map is (mark them in the map bellow) XXXX mm<br>which makes<br>1: …</p>"
   },
   "na-mape-je": {
-    "cs": "na mapě je",
-    "de": "auf der Karte ist",
-    "en": "on a map is"
+    "cs": "na staré mapě je",
+    "de": "auf die Altkarte ist",
+    "en": "on the old map is"
   },
   "ve-skutecnosti": {
     "cs": "ve skutečnosti.",
