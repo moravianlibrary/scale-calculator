@@ -249,4 +249,19 @@ var texts = {
     "de": "slowakische Elle",
     "en": "cubit - slowakische Elle"
   },
+  "map-osm" : {
+    "cs": "OSM",
+    "de": "OSM",
+    "en": "OSM"
+  },
+  "map-cz-base-10" : {
+    "cs": "Základní mapa 1:10000",
+    "de": "Base map 1:10000",
+    "en": "Base map 1:10000"
+  },
+  "map-cz-ortofoto" : {
+    "cs": "Ortofoto",
+    "de": "Ortofoto",
+    "en": "Ortofoto"
+  }
 }

@@ -1,6 +1,26 @@
-var raster = new ol.layer.Tile({
-  source: new ol.source.OSM()
-});
+window.mapLayers = {
+  'map-osm': new ol.layer.Tile({
+    source: new ol.source.OSM()
+  }),
+  'map-cz-base-10': new ol.layer.Tile({
+    extent: [1336730.750651,6187118.817515,2116999.935386,6635957.047606],
+    source: new ol.source.TileWMS({
+      url: 'http://geoportal.cuzk.cz/WMS_ZM10_PUB/service.svc/get',
+      params: {
+        'LAYERS': 'GR_ZM10'
+      }
+    })
+  }),
+  'map-cz-ortofoto': new ol.layer.Tile({
+    extent: [1336730.750651,6187118.817515,2116999.935386,6635957.047606],
+    source: new ol.source.TileWMS({
+      url: 'http://geoportal.cuzk.cz/WMS_ORTOFOTO_PUB/service.svc/get',
+      params: {
+        'LAYERS': 'GR_ORTFOTORGB'
+      }
+    })
+  })
+}
 
 var source = new ol.source.Vector();
 
@@ -63,14 +83,16 @@ var mapElement = document.getElementById('map');
 var clearMapDisabled = false;
 
 var map = new ol.Map({
-  layers: [raster, vector],
+  layers: [window.mapLayers['map-osm'], vector],
   target: 'map',
   view: new ol.View({
-    center: [0, 0],
-    zoom: 2
+    center: [1709743, 6402365],
+    zoom: 7
   })
 });
 
+var layerSwitcher = new ol.control.Control({element: document.getElementById('layer-switcher')});
+map.addControl(layerSwitcher);
 
 var draw; // global so we can remove it later
 
@@ -210,6 +232,36 @@ function clearMap() {
   if (measureTooltipElement) {
     measureTooltipElement.parentNode.removeChild(measureTooltipElement);
     measureTooltipElement = null;
+  }
+}
+
+function switchLayer(id) {
+  var layer = window.mapLayers[id];
+  map.getLayers().removeAt(0);
+  map.getLayers().insertAt(0, layer);
+  if (layer.getExtent()) {
+    var center;
+    var zoom;
+    var extent = layer.getExtent();
+
+    if (ol.extent.containsCoordinate(extent, map.getView().getCenter())) {
+      center = map.getView().getCenter();
+      zoom = map.getView().getZoom();
+    } else {
+      center = [(extent[0] + extent[2]) / 2, (extent[1] + extent[3]) / 2];
+      zoom = 7;
+    }
+
+    map.setView(new ol.View({
+      extent: extent,
+      center: center,
+      zoom: zoom
+    }));
+  } else {
+    map.setView(new ol.View({
+      center: map.getView().getCenter(),
+      zoom: map.getView().getZoom()
+    }));
   }
 }
 

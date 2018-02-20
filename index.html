@@ -48,6 +48,8 @@
     </div>
     <div id="map" class="map map-content"></div>
 
+    <select id="layer-switcher" class="ol-control"></select>
+
     <div id="help-dialog" class="modal fade" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -74,6 +76,7 @@
       var systemInput = $('#input-system');
       var unitInput = $('#input-unit');
       var valueOutput = $('#output-value');
+      var layerSwitcher = $('#layer-switcher');
 
       var systemMap = {};
       systems.forEach(function(system) {
@@ -136,6 +139,17 @@
       });
 
       updateUnits(systemInput.val());
+
+      for (var k in window.mapLayers) {
+        layerSwitcher.append($('<option>', {
+          'value': k,
+          'data-text-ref': k
+        }));
+      }
+
+      layerSwitcher.on('change', function() {
+        switchLayer(layerSwitcher.val());
+      });
 
       updateTexts();
 

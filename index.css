@@ -86,3 +86,8 @@ div.inline {
 .modal-dialog {
   width: 90%;
 }
+
+#layer-switcher {
+  right: 0.5em;
+  top: 0.5em;
+}
