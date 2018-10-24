@@ -1,0 +1,83 @@
+#map-controls {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(37, 39, 43, 0.8);
+  line-height: 33px;
+}
+#layer-switcher {
+  display: inline-block;
+  position: relative;
+  top: auto;
+  bottom: auto;
+  right: auto;
+  left: auto;
+  height: auto;
+  margin-left: 1rem;
+  margin-right: 0.2rem;
+  margin-bottom: 3px;
+}
+.ol-rotate {
+  right: 330px;
+}
+.ol-control {
+  padding: 0;
+}
+.ol-zoom.ol-control {
+  display: inline-block;
+  position: relative;
+  top: auto;
+  bottom: auto;
+  right: auto;
+  left: auto;
+  background: 0;
+}
+.ol-zoom.ol-control button {
+  display: inline;
+  background-color: #0000;
+  cursor: pointer;
+}
+.ol-zoom.ol-control button:focus {
+  outline: 0;
+}
+.tooltip {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0px;
+  color: white;
+  padding: 1px 3px;
+  opacity: 1;
+  white-space: nowrap;
+  font-size: 15px;
+}
+.tooltip-measure {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+  color: rgb(24, 152, 255);
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+.autocomplete-suggestions {
+  width: auto !important;
+  left: auto !important;
+  right: 20px !important;
+  background-color: white;
+}
+.autocomplete-suggestion {
+  font-family: 'Roboto', sans-serif;
+  color: black;
+}
+.autocomplete-suggestion:hover {
+  background-color: #4a90d9;
+  color: white;
+}
+.autocomplete-suggestion b {
+  color: rgb(24, 152, 255);
+}
+.autocomplete-suggestion:hover b {
+  color: black;
+}
