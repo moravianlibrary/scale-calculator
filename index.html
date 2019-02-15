@@ -2,209 +2,131 @@
 <html lang="cs">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title data-text-ref="scale-calculator"></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://openlayers.org/en/v4.4.2/css/ol.css" type="text/css">
-    <link rel="stylesheet" href="./languages.min.css">
-    <link rel="stylesheet" href="./index.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="https://www.mzk.cz/sites/mzk.cz/themes/mzk/favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.css" integrity="sha256-MFTTStFZmJT7CqZBPyRVaJtI2P9ovNBbwmr0/KErfEc=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.css" integrity="sha256-rQq4Fxpq3LlPQ8yP11i6Z2lAo82b6ACDgd35CKyNEBw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/map.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.js" integrity="sha256-zs4Ql/EnwyWVY+mTbGS2WIMLdfYGtQOhkeUtOawKZVY=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
-    <script src="https://openlayers.org/en/v4.4.2/build/ol.js"></script>
-    <script src="texts.js"></script>
-    <script src="systems.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/4.6.5/ol.js" integrity="sha256-77IKwU93jwIX7zmgEBfYGHcmeO0Fx2MoWB/ooh9QkBA=" crossorigin="anonymous"></script>
+    <script src="data/texts.js"></script>
+    <script src="data/systems.js"></script>
   </head>
   <body>
-    <div class="container-fluid application-content">
-      <div class="row text-center">
+    <div class="container right-panel">
+      <div class="row justify-content-between blue">
         <div class="logo">
           <a href="https://www.mzk.cz/"><img data-text-ref="mzk-logo-src" data-text-target="src" width="90px" src="mzk-logo.png"></a>
         </div>
-        <div class="languages">
-          <a href="javascript:switchLang('cs')" class="btn btn-link"><span class="lang-sm" lang="cs"></span></a>
-          <a href="javascript:switchLang('de')" class="btn btn-link"><span class="lang-sm" lang="de"></span></a>
-          <a href="javascript:switchLang('en')" class="btn btn-link"><span class="lang-sm" lang="en"></span></a>
-        </div>
-        <div class="title">
-          <h1 data-text-ref="scale-calculator"></h1>
-          <a href="javascript:showHelp()"><img data-text-ref="about-app" data-text-target="alt" src="help.svg"></a>
+        <select id="lang-switcher" class="languages custom-select">
+          <option value="cs">CZ</option>
+          <option value="de">DE</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+      <div class="row justify-content-end blue">
+        <div data-text-ref="scale-calculator" class="title"></div>
+      </div>
+      <div class="row justify-content-end blue">
+        <div data-text-ref="search-label" class="search-label"></div>
+      </div>
+      <div class="row justify-content-end blue">
+        <input id="search-location" type="text" class="search-input form-control right mb-4 mt-2">
+      </div>
+
+      <div class="row">
+        <ul class="nav nav-tabs nav-fill" role="tablist">
+          <li class="nav-item">
+            <a data-text-ref="calculation" id="main-tab" class="nav-link active" data-toggle="tab" href="#main" role="tab" aria-controls="main" aria-selected="true"></a>
+          </li>
+          <li class="nav-item">
+            <a data-text-ref="about-scales" id="about-tab" class="nav-link" data-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="false"></a>
+          </li>
+          <li class="nav-item">
+            <a data-text-ref="help" id="help-tab" class="nav-link" data-toggle="tab" href="#help" role="tab" aria-controls="help" aria-selected="false"></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="row tab-pane fade show active justify-content-start black" id="main" role="tabpanel" aria-labelledby="main-tab">
+        <div class="col">
+          <div data-text-ref="subtitle" class="row subtitle"></div>
+          <div class="row output my-1">
+            <span data-text-ref="scale"></span><span id="output"><span id="output-prefix">1:</span><span id="output-value"></span></span>
+          </div>
+          <div data-text-ref="system" class="row label my-1"></div>
+          <div class="row">
+            <select id="input-system" class="custom-select white black-bg wide"></select>
+          </div>
+          <div data-text-ref="used-system-unit" class="row label my-1"></div>
+          <div class="row">
+            <select id="input-unit" class="custom-select white black-bg wide mt-1 mb-3"></select>
+          </div>
+          <div data-text-ref="length" class="row label my-1"></div>
+          <div class="row">
+            <input id="input-value-mm" type="text" class="form-control mm wide black-bg" value="100">
+          </div>
+          <div data-text-ref="on-map-is" class="row label my-1"></div>
+          <div class="row">
+            <input id="input-value-unit" type="text" class="form-control wide black-bg my-1" value="1">
+          </div>
+
+          <div data-text-ref="on-the-ground" class="row label my-1"></div>
         </div>
       </div>
-      <div class="row form-inline text-center">
-        <div class="inline">
-          <div data-text-ref="system"></div>
-          <div>
-            <select id="input-system" class="form-control"></select>
+      <div class="row tab-pane fade justify-content-start black" id="about" role="tabpanel" aria-labelledby="about-tab">
+        <div class="col">
+          <div class="row tab-text subtitle" data-text-ref="about-scales-text"></div>
+        </div>
+      </div>
+      <div class="row tab-pane fade justify-content-start black" id="help" role="tabpanel" aria-labelledby="help-tab">
+        <div class="col">
+          <div class="row tab-text subtitle" data-text-ref="help-text"></div>
+        </div>
+      </div>
+      <div class="row tab-pane fade justify-content-start black" id="authors" role="tabpanel" aria-labelledby="authors-tab">
+        <div class="col">
+          <div class="row tab-text my-4" data-text-ref="authors-text"></div>
+        </div>
+      </div>
+      <div class="row black" id="pannel-padding"></div>
+      <div class="black" id="footer">
+        <div class="row">
+          <div class="col text-center">
+            <a href="http://mapseries.mzk.cz" class="align-middle" data-text-ref="mapseries-online"></a>
+            <span class="separator">|</span>
+          </div>
+          <div class="col text-center">
+            <a href="http://mapseries.mzk.cz/catalog" class="align-middle" data-text-ref="mapseries-catalog"></a>
           </div>
         </div>
-        <input id="input-value-mm" type="text" class="form-control" value="100">
-        <span>mm </span><span data-text-ref="na-mape-je"></span>
-        <input id="input-value-unit" type="text" class="form-control" value="1">
-        <select id="input-unit" class="form-control"></select>
-        <span data-text-ref="ve-skutecnosti"></span>
+        <div class="row">
+          <div class="col-4 text-center nav">
+            <a id="authors-tab" href="#authors" class="align-middle" data-text-ref="authors" data-toggle="tab" aria-selected="false" role="tab" aria-controls="authors"></a>
+            <span class="separator">|</span>
+          </div>
+          <div class="col-8 text-center">
+            <a href="https://www.openstreetmap.org/" class="align-middle" data-text-ref="openstreetmap-contributors"></a>
+          </div>
+        </div>
       </div>
-      <div class="row text-center"><span id="output"><span id="output-prefix">1:</span><span id="output-value"></span></span></div>
     </div>
     <div id="map" class="map map-content"></div>
 
-    <select id="layer-switcher" class="ol-control"></select>
+    <div id="map-controls">
+    </div>
+    <select id="layer-switcher" class="ol-control custom-select white black-bg align-middle"></select>
 
-    <div id="help-dialog" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" data-text-ref="scale-calculator"></h4>
-          </div>
-          <div data-text-ref="help-text" class="modal-body">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" data-text-ref="close"></button>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <script src="./map.js"></script>
-    <script>
-
-      var lang = 'cs';
-
-      var valueMmInput = $('#input-value-mm');
-      var valueUnitInput = $('#input-value-unit');
-      var systemInput = $('#input-system');
-      var unitInput = $('#input-unit');
-      var valueOutput = $('#output-value');
-      var layerSwitcher = $('#layer-switcher');
-
-      var systemMap = {};
-      systems.forEach(function(system) {
-        var unitMap = {};
-
-        system.units.forEach(function(unit) {
-          unitMap[unit.id] = unit;
-        });
-
-        system.unitMap = unitMap;
-        systemMap[system.id] = system;
-      });
-
-      valueMmInput.on('keyup', function() {
-        updateOutput();
-      });
-
-      valueUnitInput.on('keyup', function() {
-        updateOutput();
-        clearMap();
-      });
-
-      systemInput.on('change', function() {
-        updateUnits(systemInput.val());
-        updateOutput();
-        clearMap();
-      });
-
-      unitInput.on('change', function() {
-        updateOutput();
-        clearMap();
-      });
-
-      $('#output-prefix').on('click', function(e) {
-        select(e.target.parentElement);
-      });
-
-      $('#output-value').on('click', function(e) {
-        select(e.target);
-      });
-
-      function select(element) {
-        var range = document.createRange();
-        range.selectNodeContents(element);
-        var sel = window.getSelection();
-        sel.removeAllRanges();
-        sel.addRange(range);
-
-        try {
-          document.execCommand('copy');
-        } catch (err) {
-        }
-      };
-
-      systems.forEach(function(system) {
-        systemInput.append($('<option>', {
-          'value': system.id,
-          'data-text-ref': system.id
-        }));
-      });
-
-      updateUnits(systemInput.val());
-
-      for (var k in window.mapLayers) {
-        layerSwitcher.append($('<option>', {
-          'value': k,
-          'data-text-ref': k
-        }));
-      }
-
-      layerSwitcher.on('change', function() {
-        switchLayer(layerSwitcher.val());
-      });
-
-      updateTexts();
-
-      updateOutput();
-
-      function updateOutput() {
-        var systemId = systemInput.val();
-        var unitId = unitInput.val();
-        var ratio = parseFloat(systemMap[systemId].unitMap[unitId].value);
-        var inputMm = parseFloat(valueMmInput.val().replace(',', '.'));
-        var inputUnit = parseFloat(valueUnitInput.val().replace(',', '.'));
-
-        if (inputMm === NaN || inputUnit === NaN) {
-          valueOutput.empty();
-        } else {
-          var value = Math.round(inputUnit * ratio / inputMm);
-          valueOutput.empty().append(value);
-        }
-      }
-
-      function updateUnits(systemId) {
-        var system = systemMap[systemId];
-        unitInput.empty();
-        system.units.forEach(function(unit) {
-          unitInput.append($('<option>', {
-            value: unit.id,
-            'data-text-ref': unit.id
-          }));
-        });
-        updateTexts();
-      }
-
-      function switchLang(l) {
-        lang = l;
-        updateTexts();
-      }
-
-      function updateTexts() {
-        $('[data-text-ref]').each(function (i, e) {
-          e = $(e);
-          var text = texts[e.attr('data-text-ref')][lang];
-          var target = e.attr('data-text-target');
-
-          if (target) {
-            e.attr(target, text);
-          } else {
-            e.html(text);
-          }
-        });
-      }
-
-      function showHelp(e) {
-        $('#help-dialog').modal();
-      }
-
-    </script>
+    <script src="js/map.js"></script>
+    <script src="js/design.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
